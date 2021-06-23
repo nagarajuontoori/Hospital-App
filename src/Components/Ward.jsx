@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from './Nav';
 
 import axios from 'axios';
+import Doctors from './Doctors';
 
 
 class Ward extends Component {
@@ -22,18 +23,21 @@ class Ward extends Component {
             wardlist: response.data
         })
         console.log(this.state.wardlist)
+
     }
 
 
-    // handleview = (wardType) => {
-    //     let { wardlist } = this.state;
-    //     console.log('view', wardlist[wardType])
-    // }
+    handlemodeview = () => {
+        const { wardlist } = this.state;
+        const index = this.state.wardlist.indexOf(wardlist.wardType);
+        console.log('view', wardlist[wardlist.wardType]);
+        // console.log(index)
+    }
 
 
     render() {
 
-        const { wardlist, index } = this.state
+        const { wardlist } = this.state
         return (
             <div>
                 <Nav user2={this.props.user} />
@@ -47,16 +51,16 @@ class Ward extends Component {
                         </div>}
 
                     <div className="row g-3">
-                        {wardlist.map((item, key) => {
+                        {wardlist.map((item, index) => {
 
                             return (
 
-                                <div class="card m-4">
+                                <div className="card m-4">
                                     <div class="card-body mx-2">
                                         <div className="row">
-                                            <h5 class="card-title mx-4">{item.wardType}</h5>
+                                            <h5 key={index} className="card-title mx-4">{item.wardType}</h5>
 
-                                            <button type="button" onClick={(wardType) => this.handleview(wardType)} className="btn btn-primary button1 pt-1  d-flex flex-row-reverse">view</button>
+                                            <button type="button" onClick={() => this.handlemodeview()} className="btn btn-primary button1 pt-1  d-flex flex-row-reverse">view</button>
                                         </div>
                                         <p class="card-text">Available Beds:<b className="text-danger">{item.availableBeds}</b></p>
                                         <p class="card-text">Total Beds :<b className="text-success">{item.totalBeds}</b></p>
