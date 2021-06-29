@@ -26,9 +26,22 @@ const Nav = (props) => {
 
             <Link to="/Doctors" className="m-6 px-4  text-decoration-none " ><h2>Doctors</h2></Link>
 
-            <span className="text-primary   m-2 ">{props.user1}</span>
+            <span className="text-primary   m-2 "></span>
+
+
 
           </div>
+
+          <div className="dropdown mx-5">
+            <a class="text-light dropdown-toggle mx-5" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <b className="text-light"> Hii, {props.user}</b>
+            </a>
+
+            <div className="dropdown-menu text-light" aria-labelledby="dropdownMenu">
+              <Link className="dropdown-item bg-light " to="./">signout</Link>
+            </div>
+          </div>
+
         </div>
       </nav>
     </div>
