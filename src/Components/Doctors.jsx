@@ -89,7 +89,7 @@ class Doctors extends Component {
         const { doctorlist } = this.state;
         return (
             <div>
-                <Nav />
+                {/* <Nav /> */}
 
                 <div>
 
@@ -101,10 +101,10 @@ class Doctors extends Component {
                         </div>}
                 </div>
                 <div className="doc-button">
-                    <Link to="/Doctorform" type="button" className="btn btn-primary mx-5 mt-1 ">Add Doctor</Link>
+                    <Link to="/Doctorform" type="button" className="btn btn-primary m-4 ">Add Doctor</Link>
                 </div>
                 <div className="doctorlist">
-                    <table className="table table-striped" >
+                    <table className="table table-striped w-95" >
 
                         <thead>
                             <tr>

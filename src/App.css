@@ -47,20 +47,43 @@ display:flex;
   margin-left: auto;
 }
 .doctorlist{
-  margin: 95px;
-  margin-top: 151px;
+  margin: 85px;
   border: 1px solid grey;
  
 }
 
 .doc-button{
-  display: flex;
   float: right;
-  margin:55px ;
-  
+margin-right: 8%;
 }
 .doc-form{
  background-color: rgb(219, 223, 212);
  border-radius: 8px;
 
+}
+
+#modal1{
+  width: 50px;
+}
+
+.modal-content,.modal-dialog{
+  width:170% !important;
+float: left;
+margin: 28px 16%;
+}
+.fontweight{
+  font-weight:100 !important
+}
+.close{
+  color: red !important;
+  font-size:3rem !important;
+  margin-right:54px !important;
+}
+
+.textdata{
+  width:max-content;
+  margin-right: 455px;
+}
+.dropdown1{
+  background-color: #343a40 !important;
 }

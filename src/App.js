@@ -7,9 +7,12 @@ import Home from "./Components/Home";
 
 import Ward from "./Components/Ward";
 
+import Nav from "./Components/Nav";
+
 import Doctors from "./Components/Doctors";
 
 import Doctorform from "./doctorregform/Doctorform";
+import Newmodal from "./Components/Newmodal";
 
 
 const App = () => {
@@ -20,7 +23,7 @@ const App = () => {
   const handleusername = (name) => {
 
     setUser(name);
-    console.log("called")
+    console.log(name)
   }
 
 
@@ -30,9 +33,10 @@ const App = () => {
     <div className="App">
       <Router>
 
+        <Route exact path="/" render={() => <Login handlename={(username) => handleusername(username)} />} ></Route>
+        <Nav user={user} />
         <Switch>
 
-          <Route exact path="/" render={() => <Login handlename={(username) => handleusername(username)} />} />
 
           <Route path="/Home" render={() => <Home user={user} />} />
 
@@ -43,6 +47,8 @@ const App = () => {
           <Route path="/Doctorform" component={Doctorform} />
 
           <Route path="/Doctorform/doctor:id" component={Doctorform} />
+
+          <Route path="/Newmodal" component={Newmodal} />
         </Switch>
       </Router>
     </div>

@@ -32,7 +32,7 @@ class Home extends Component {
     return (
       <div>
         <div>
-          <Nav user1={this.props.user} />
+          {/* <Nav user1={this.props.user} /> */}
         </div>
         {this.state.loading &&
           <div class="d-flex justify-content-center">
